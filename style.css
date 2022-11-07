@@ -15,14 +15,17 @@
 :root {
   /* Primary */
   --dark-cyan: hsl(158, 36%, 37%);
+  --darker-cyan: hsl(156, 42%, 18%);
   --cream: hsl(30, 38%, 92%);
   /* Neutral */
   --vdarkblue: hsl(212, 21%, 14%);
   --darkgreyblue: hsl(228, 12%, 48%);
   --white: hsl(0, 0%, 100%);
 
-  --V-width: 40rem;
-  --V-height: 30rem;
+  --V-width: 48rem;
+  --V-height: 36rem;
+
+  --margin: 2.1rem;
 }
 
 body {
@@ -62,10 +65,16 @@ main {
   border-radius: 0 10px 10px 0;
 }
 
-/* main > * {
-  margin: 2rem;
-  font-size: 1.5rem;
-} */
+main > * {
+  margin: var(--margin);
+}
+
+#price-container h1,
+#price-container s {
+  display: inline;
+  vertical-align: middle;
+  margin-right: 1.5rem;
+}
 
 .price {
   color: var(--dark-cyan);
@@ -76,13 +85,50 @@ button {
   color: var(--white);
 }
 
-p {
-  font-size: 14px;
+.desc {
+  line-height: 1.7rem;
+}
+
+.type {
+  letter-spacing: 0.3rem;
+}
+
+p,
+s {
+  font-size: 1.2rem;
   font-family: "Montserrat", sans-serif;
   color: var(--darkgreyblue);
 }
-
+button > img {
+  height: 20px;
+  width: auto;
+  display: inline;
+  vertical-align: middle;
+  margin-bottom: 0.3rem;
+  margin-right: 0.5rem;
+  border-radius: 0;
+}
 h1 {
   font-family: "Fraunces", serif;
   color: var(--vdarkblue);
+  font-size: 2.7rem;
+  line-height: 2.4rem;
 }
+button {
+  border: none;
+  width: calc(100% - (var(--margin) * 2));
+  height: 4rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+button > span {
+  display: inline-block;
+}
+button:hover {
+  background: var(--darker-cyan);
+}
+
+/* FIX MARGIN BETWEEN PRICE AND BUTTON */
+/* FIX FONT-SIZE, MARGINS (*), LETTER-SPACING, LINE-HEIGHT */
