@@ -10,6 +10,7 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 :root {
@@ -39,24 +40,22 @@ section {
   display: flex;
   width: var(--V-width);
   height: var(--V-height);
-  justify-items: end;
-  align-items: center;
   justify-content: center;
 }
 
 nav,
 main {
-  width: calc(var(--V-width) / 2);
-  height: var(--V-height);
   background-color: var(--white);
+  width: calc(var(--V-width) / 2);
 }
 
-img {
+nav > img {
   width: 100%;
   height: auto;
+  content: url("/images/image-product-desktop.jpg");
 }
 
-img,
+nav > img,
 nav {
   border-radius: 10px 0 0 10px;
 }
@@ -73,7 +72,7 @@ span > h1,
 span > s {
   display: inline;
   vertical-align: middle;
-  margin-right: 1.5rem;
+  margin-right: 0.6em;
 }
 
 .price {
@@ -86,7 +85,7 @@ button {
 }
 
 .desc {
-  line-height: 1.8rem;
+  line-height: 1.5em;
 }
 
 .type {
@@ -95,31 +94,31 @@ button {
 
 p,
 s {
-  font-size: 1.2rem;
+  font-size: 1.2em;
   font-family: "Montserrat", sans-serif;
   color: var(--darkgreyblue);
 }
-button > img {
-  height: 20px;
+.svg {
+  height: 1.05em;
   width: auto;
   display: inline;
   vertical-align: middle;
-  margin-bottom: 0.3rem;
-  margin-right: 0.5rem;
+  margin-bottom: 0.2em;
+  margin-right: 0.4em;
   border-radius: 0;
 }
 h1 {
   font-family: "Fraunces", serif;
   color: var(--vdarkblue);
-  font-size: 2.7rem;
-  line-height: 2.4rem;
+  font-size: 2.7em;
+  line-height: 0.89em;
 }
 button {
   border: none;
   width: calc(100% - (var(--margin) * 2));
-  height: 4rem;
+  height: 3.4em;
   border-radius: 10px;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   cursor: pointer;
@@ -131,4 +130,30 @@ button:hover {
   background: var(--darker-cyan);
 }
 
-/* # ADD MEDIA-QUERIES FOR MOBILE DEVICES */
+@media (max-width: 48rem) {
+  :root {
+    --V-width: 42rem;
+
+    --margin: 1.4rem;
+  }
+  section {
+    flex-direction: column;
+    font-size: 12px;
+    align-items: center;
+  }
+  /* changing image */
+  nav > img {
+    content: url("/images/image-product-mobile.jpg");
+  }
+  nav > img,
+  nav {
+    border-radius: 10px 10px 0 0;
+  }
+  main {
+    border-radius: 0 0 10px 10px;
+  }
+  nav,
+  main {
+    background-color: var(--white);
+  }
+}
